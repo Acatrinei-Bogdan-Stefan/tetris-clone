@@ -2,12 +2,23 @@
 #include "grid.h"
 #include "blocks.cpp"
 
+
 class Game
 {
   public:
-  Game();  //Constructor  
+  Game();  //Constructor
+  Block GetRandomBlock();
+  std::vector<Block> GetAllBlocks();
+  void Draw();
+  void HandleInput();
+  void MoveBlockLeft();
+  void MoveBlockRight();
+  void MoveBlockDown();
   Grid grid;
 
-  private:
+private:
+  bool IsBlockOutside();
   std::vector<Block> blocks;
-}
+  Block currentBlock;
+  Block nextBlock;
+};
