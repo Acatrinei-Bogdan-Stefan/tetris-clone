@@ -18,18 +18,20 @@ int main()
 {
     
     Color darkBlue = {44, 44, 127, 255};
-    constexpr int screenWidth = 300;
-    constexpr int screenHeight = 600;
+    constexpr int screenWidth = 500;
+    constexpr int screenHeight = 620;
 
     Game game = Game();
     
     InitWindow(screenWidth, screenHeight, "Raylib Tetris!");
     SetTargetFPS(60);
 
+    Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
+
     while (!WindowShouldClose())
     {
         game.HandleInput();
-        if(EventTriggered(0.2))
+        if(EventTriggered(0.25))
         {
             game.MoveBlockDown();
         }
