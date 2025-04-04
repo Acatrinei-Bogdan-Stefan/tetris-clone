@@ -8,11 +8,13 @@ class Game
   public:
 
   Game();  //Constructor
+  ~Game();
   void Draw();
   void HandleInput();
   void MoveBlockDown();
   bool gameOver;
   int score;
+  Music music;
 
 private:
 
@@ -30,4 +32,6 @@ private:
   Grid grid;
   Block currentBlock;
   Block nextBlock;
+  Sound rotateSound;
+  Sound clearSound;
 };
